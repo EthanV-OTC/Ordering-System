@@ -1,0 +1,15 @@
+/* Style the pop-out container itself */
+[popover] {
+    border: none;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 300px;
+    background: white;
+  }
+  
+  /* Style the background "dim" effect (The Backdrop) */
+  [popover]::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+  }
