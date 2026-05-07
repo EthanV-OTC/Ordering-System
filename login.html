@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+</head>
+<body>
+     <ul>
+        <il><a href="index.html">Back Home</a></li>
+     </ul>
+    
+    <button id="loginbutton">Login</button>   
+    <script>
+        document.getElementById('loginbutton').addEventListener('click', () => {
+          localStorage.setItem('userLogin', 'Yes');
+          window.location.href = "index.html"; 
+        });
+    </script>
+</body>
+</html>

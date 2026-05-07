@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Home</title>
+</head>
+<body>
+     <ul>
+        <!-- Added an ID here so we can target it -->
+        <il><a href="login.html" id="auth-link">Login</a></il>
+     </ul>
+
+    <div id="message-container"></div> 
+
+    <script>
+        const authLink = document.getElementById('auth-link');
+        const messageContainer = document.getElementById('message-container');
+
+        if (localStorage.getItem('userLogin') === 'Yes') {
+            authLink.innerText = "Logout";
+            messageContainer.innerHTML = "<h1>Login has been clicked</h1>";
+
+            authLink.addEventListener('click', (event) => {
+                event.preventDefault(); 
+                
+                // 1. Set status to No
+                localStorage.setItem('userLogin', 'No');
+                
+                // 2. Refresh the page! 
+                // This resets the link to its original HTML state (Login -> login.html)
+                window.location.reload();
+            });
+        }
+        if (localStorage.getItem('userLogin') === 'No') {
+            messageContainer.innerHTML = "<h1>User is Logged Out</h1>"
+        }
+    </script>
+</body>
+</html>
